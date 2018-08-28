@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <?php
+      $x = 10;
+      
+      function myGlobalFunc() {
+        // variable x inside this function will generate an error as $x is global variable and can only be accessed outside a function
+        echo "<p>Variable x inside the function is : $x</p>"; 
+      }
+      myGlobalFunc();
+      echo "<p>Variable x outside the function is : $x</p>"; //Outputs 10;
+      
+      function myLocalFunc() {
+        // variable y(local variable) inside this function will display its value as it is declared inside this function
+        $y = 5;
+        echo "<p>Variable y inside the function is : $y</p>";
+      }
+      myLocalFunc();
+      echo "<p>Variable x outside the function is : $y</p>"; // Outputs error as $y is local variable declared inside a function
+      
+      //Global keyword scope function
+      $a = 5;
+      $b = 10;
+      
+      function myAddFunc() {
+       //global keyword declaration
+       global $a, $b;
+       $b = $a + $b;
+      }
+      myAddFunc();
+      echo $b; // Outputs 15
+      
+      //Another example of global keyword scope function
+      function mySubtractFunc() {
+        $GLOBALS['a'] = $GLOBALS['b'] - $GLOBALS['a'];  
+      }
+      mySubtractFunc();
+      echo $a; // Outputs 5
+      
+      //Static keyword decalration example
+      function myIncreamentFunc() {
+        static $x = 0;
+        echo $x;
+        $x++;
+      }
+      myIncreamentFunc(); //Outputs 0
+      myIncreamentFunc(); //Outputs 1
+      myIncreamentFunc(); //Outputs 2
+    ?>
+  </body>
+</html>
