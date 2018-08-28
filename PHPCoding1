@@ -31,6 +31,19 @@
       echo "My car is " . $color . "<br>";
       echo "My house is " . $COLOR . "<br>";
       echo "My boat is " . $coLOR . "<br>";
+      
+      //Decalring a PHP variable
+      $txt = "I am PHP text";
+      echo $txt;
+      
+      //Displaying a output variable
+      $txt = "Aniruddha<3";
+      echo "I love $txt";
+      
+      //Displaying output variable: another example
+      $x = 4; $y = 5;
+      echo $x + $y;
+      
     ?>
   </body>
 </html>
