@@ -44,6 +44,9 @@
       $x = 4; $y = 5;
       echo $x + $y;
       
+      //echo example with multiple parameters
+      echo "This ", "string ", "was ", "made ", "with multiple parameters."; 
+      // This will output to : This string was made with multiple parameters.
     ?>
   </body>
 </html>
