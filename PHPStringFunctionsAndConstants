@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <?php
+      $txt = "Hello world!";
+      
+      //gets the length of the string
+      echo strlen($txt); //outputs 12
+      
+      //gets the number of words in the string
+      echo str_word_count($txt); //outputs 2
+      
+      //Reverse the given string
+      echo strrev($txt); //outputs to !dlrow olleH
+      
+      //gets the specific Text Within a String
+      echo strpos("Hello world!", "world"); //Outputs to 6 
+      //If a match is found, the function returns the character position of the first match. If no match is found, it will return FALSE.
+      
+      //Replace Text Within a String
+      echo str_replace("world", "Dolly", "Hello world!"); // outputs Hello Dolly!
+      
+      //Defining a constant
+      define(NAME,'Aditi');
+      echo NAME; //outputs to Aditi
+      define(NAME,'Aditi',true);
+      echo name; //outputs to Aditi
+      
+      //Constants are global by default and can be used anywhere in the script
+      
+    ?>
+  </body>
+</html>
