@@ -4,6 +4,7 @@
   </head>
   <body>
     <?php
+      //Echo keyword displays the text on the UI
       echo "My name is Aditi!";
       
       // This is a single-line comment
@@ -20,10 +21,16 @@
       $x = 5 /* + 15 */ + 5;
       echo $x;
       
-      // PHP is not case sensitive
+      // PHP is not case sensitive in case of keywords, classes, functions, user-defined functions
       ECHO "Hello World!<br>";
       echo "Hello World!<br>";
       EcHo "Hello World!<br>";
+      
+      //PHP is case sensitive in case of variable names
+      $color = "red";
+      echo "My car is " . $color . "<br>";
+      echo "My house is " . $COLOR . "<br>";
+      echo "My boat is " . $coLOR . "<br>";
     ?>
   </body>
 </html>
