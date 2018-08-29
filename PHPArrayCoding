@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <?php
+      //Declaring an indexed array
+      $cars = array('BMW','Merc','Toyota');
+      
+      //count the lenght of array
+      echo count($cars); //outputs to 3
+      
+      //Declaring the associative array
+      $age = array('Peter'=>'35','John'=>'30','Andrew'=>'25');
+      echo $age['Andrew']; //outputs to 25
+      
+      //Loop through an associative array
+      foreach($age as $x => $x_value) {
+        echo "Key is : ".$x.' and Value is : '.$x_value.'<br>'; //Outputs to Key is : Peter and Value is : 35
+      }
+      
+      //Sort array in ascending order
+      sort($cars); //Outputs to BMW,Merc,Toyota
+      
+      //sort array in descending order
+      rsort($cars); //outputs to Toyota,Merc, BMW
+      
+      //sort associative array in ascending order according to the value
+      asort($age); //Outputs to ('Andrew'=>'25','John'=>'30','Peter'=>'35')
+      
+      //sort associative array in ascending order according to the key
+      ksort($age); //outputs to ('Andrew'=>'25','John'=>'30','Peter'=>'35')
+      
+      //sort associative array in descending order according to the value
+      arsort($age); //outputs to ('Peter'=>'35','John'=>'30','Andrew'=>'25')
+      
+      //sort associative array in descending order according to the key
+      krsort($age); //outputs to ('Peter'=>'35','John'=>'30','Andrew'=>'25')
+    ?>
+  </body>
+</html>
