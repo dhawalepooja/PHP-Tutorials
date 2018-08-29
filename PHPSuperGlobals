@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <?php
+      //$_GLOBAL super global variable (all the global variables are accessed from anywhere in the PHP script)
+      $x = 5; $y = 4;
+      function sumFunc() {
+        $_GLOBAL['z'] = $_GLOBAL['x'] + $_GLOBAL['y'];
+      }
+      sumFunc();
+      echo $z; //Ouptuts 9
+      
+      //$_SERVER super global variable (conatins information about headers, paths and script information)
+      echo $_SERVER['PHP_SELF']; //returns filename of the currently executing PHP script (/php/demo_global_server.php)
+      echo "<br>";
+      echo $_SERVER['SERVER_NAME']; // returns the name of the host server(www.w3schools.com)
+      echo "<br>";
+      echo $_SERVER['HTTP_HOST']; //returns the host header from the current request (www.w3schools.com)
+      echo "<br>";
+      echo $_SERVER['HTTP_REFERER'];//returns the complete URL of the current page
+      //Outputs to (Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko))
+      echo "<br>";
+      echo $_SERVER['HTTP_USER_AGENT'];
+      echo "<br>";
+      echo $_SERVER['SCRIPT_NAME'];//returns the path of the current script (/php/demo_global_server.php)
+      
+      //$_REQUEST super global variable (is used to collect data after submitting an HTML form.)
+      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+        Name: <input type="text" name="fname">
+        <input type="submit">
+      </form>
+      
+      //We are using the super global variable $_REQUEST to collect the value of the input field:
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          // collect value of input field
+          $name = $_REQUEST['fname'];
+          if (empty($name)) {
+              echo "Name is empty";
+          } else {
+              echo $name;
+          }
+      }
+      
+      //$_POST super global variable 
+      //This isused to collect form data after submitting an HTML form with method="post". $_POST is also widely used to pass variables.
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          // collect value of input field
+          $name = $_POST['fname'];
+          if (empty($name)) {
+              echo "Name is empty";
+          } else {
+              echo $name;
+          }
+      }
+      
+      //$_GET super global variable
+      //PHP $_GET can also be used to collect form data after submitting an HTML form with method="get".
+      //$_GET can also collect data sent in the URL.
+      
+      //Consider a text that contains a hyperlink with parameters
+      <a href="test_get.php?subject=PHP&web=W3schools.com">Test $GET</a>
+      
+      /*When a user clicks on the link "Test $GET", 
+      the parameters "subject" and "web" are sent to "test_get.php", 
+      and you can then access their values in "test_get.php" with $_GET.*/
+      echo "Study " . $_GET['subject'] . " at " . $_GET['web'];
+      ?>
+  </body>
+</html>
